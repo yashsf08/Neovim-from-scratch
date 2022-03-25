@@ -18,6 +18,11 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- Leader Key Mapping
+keymap("n", "<Leader>h", ":noh<CR>", opts)
+
+
+
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -25,15 +30,25 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- Split Windows 
+keymap("n", "ss", ":split<CR>", opts)
+keymap("n", "sv", ":vsplit<CR>", opts)
+
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-Up>", ":resize -3<CR>", opts)
+keymap("n", "<C-Down>", ":resize +3<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize -3<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize +3<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+
+-- Better Navigation 
+keymap("n", "J", "6j", opts)
+keymap("n", "K", "6k", opts)
+-- keymap("n", "j", "j$", opts)
+-- keymap("n", "k", "k$", opts)
 
 -- Move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
@@ -42,11 +57,31 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+keymap("i", "kj", "<ESC>", opts)
+
+
+-- Saving files
+keymap("i", "<C-s>", "<ESC>:w<CR>", opts)
+keymap("n", "<C-s>", ":w<CR>", opts)
+
+-- Word Manipulations
+keymap("n", "<C-u>", "gUiww", opts)
+keymap("n", "<C-d>", "guiw", opts)
+
+
+-- Buffers 
+keymap("n", "<C-q>", ":q<CR>", opts)
+
+-- Tab Normal
+keymap("n", "<Tab>", ">>", opts)
+keymap("n", "<S-Tab>", "<<", opts)
 
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+-- keymap("v", "<Tab>", ">gv", opts)
+-- keymap("v", "<S-Tab>", ">gv", opts)
 
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
@@ -66,4 +101,14 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+
+-- Editor & Personal Settings
+
+  -- Adding space after every comma
+keymap("i", ",", ",<Space>", opts)
+  -- Delete Character in insert mode
+keymap("i", "<C-d>", "<Del>", opts)
+
+
 
