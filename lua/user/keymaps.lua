@@ -44,6 +44,11 @@ keymap("n", "<C-Right>", ":vertical resize +3<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- Start and end of line
+keymap("n", "gl", "^", opts)
+keymap("n", "gh", "$", opts)
+
+
 -- Better Navigation 
 keymap("n", "J", "6j", opts)
 keymap("n", "K", "6k", opts)
