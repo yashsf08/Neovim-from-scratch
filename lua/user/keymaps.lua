@@ -41,12 +41,12 @@ keymap("n", "<C-Left>", ":vertical resize -3<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +3<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<A-l>", ":bnext<CR>", opts)
+keymap("n", "<A-h>", ":bprevious<CR>", opts)
 
 -- Start and end of line
-keymap("n", "gl", "^", opts)
-keymap("n", "gh", "$", opts)
+keymap("n", "<S-h>", "^", opts)
+keymap("n", "<S-l>", "$", opts)
 
 
 -- Better Navigation 
@@ -63,6 +63,7 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
+keymap("n", "<C-c>", "<Esc>", opts)
 
 
 -- Saving files

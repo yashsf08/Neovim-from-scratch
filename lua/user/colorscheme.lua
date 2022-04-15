@@ -11,9 +11,7 @@ try
 " colorscheme darkplus
 " gruvbox settings
   set termguicolors
-  set background=dark
-  colorscheme gruvbox
-
+  colorscheme tokyonight
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark
