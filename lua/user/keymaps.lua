@@ -35,10 +35,10 @@ keymap("n", "ss", ":split<CR>", opts)
 keymap("n", "sv", ":vsplit<CR>", opts)
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize -3<CR>", opts)
-keymap("n", "<C-Down>", ":resize +3<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -3<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +3<CR>", opts)
+keymap("n", "<C-Up>", ":resize -4<CR>", opts)
+keymap("n", "<C-Down>", ":resize +4<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize -5<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize +5<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<A-l>", ":bnext<CR>", opts)
@@ -63,7 +63,7 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
-keymap("n", "<C-c>", "<Esc>", opts)
+keymap("i", "<C-c>", "<Esc>", opts)
 
 
 -- Saving files
