@@ -8,7 +8,23 @@ try
   " colorscheme spaceduck
   " colorscheme darkplus
   " gruvbox settings
-  colorscheme tokyonight
+
+  " config for gruvbox
+  set background=dark
+  colorscheme gruvbox
+
+  " " config for tokyonight
+  " set background=dark
+  " colorscheme tokyonight
+
+  " config for PaperColor
+  " set t_Co=256   " This is may or may not needed.
+  " set background=light
+  " colorscheme PaperColor
+
+  " set t_Co=256   " This is may or may not needed.
+  " set background=dark
+  " colorscheme PaperColor
 
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
