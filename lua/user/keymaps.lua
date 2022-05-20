@@ -71,12 +71,13 @@ keymap("i", "<C-s>", "<ESC>:w<CR>", opts)
 keymap("n", "<C-s>", ":w<CR>", opts)
 
 -- Word Manipulations
-keymap("n", "<C-u>", "gUiww", opts)
-keymap("n", "<C-d>", "guiw", opts)
+-- keymap("n", "<C-u>", "gUiww", opts)
+-- keymap("n", "<C-d>", "guiw", opts)
 
 
 -- Buffers 
-keymap("n", "<C-q>", ":q<CR>", opts)
+keymap("n", "<C-q>", ":q<CR>", opts) -- Close Windows
+-- keymap("n", "<C-d>", ":bd<CR>", opts) -- Delete Buffer
 
 -- Tab Normal
 keymap("n", "<Tab>", ">>", opts)
@@ -118,3 +119,8 @@ keymap("i", "<C-d>", "<Del>", opts)
 
 
 
+-- Personal Tweaks
+keymap("n", "<C-d>", "<C-e>", opts)
+keymap("n", "<C-u>", "<C-y>", opts)
+
+    -- Trying to make comments

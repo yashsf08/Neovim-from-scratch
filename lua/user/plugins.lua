@@ -48,7 +48,12 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
+
+
+
   use "akinsho/bufferline.nvim"
+  use "nanozuki/tabby.nvim"
+
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
   use "akinsho/toggleterm.nvim"
@@ -61,12 +66,12 @@ return packer.startup(function(use)
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  -- use "lunarvim/darkplus.nvim"
-  use "pineapplegiant/spaceduck"
+  use "lunarvim/darkplus.nvim"
+  -- use "pineapplegiant/spaceduck"
   use "ellisonleao/gruvbox.nvim"
-  use 'folke/tokyonight.nvim'
+  -- use 'folke/tokyonight.nvim'
   use 'NLKNguyen/papercolor-theme'
-
+  use "EdenEast/nightfox.nvim" -- Packer
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -101,6 +106,11 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+
+  ------------- MY PLUGINS -----------------------------
+  -- Surround Plugins
+  use "machakann/vim-sandwich"
+  use 'feline-nvim/feline.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

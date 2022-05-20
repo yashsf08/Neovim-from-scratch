@@ -6,13 +6,15 @@ try
   "   set termguicolors
   " endif
   " colorscheme spaceduck
-  " colorscheme darkplus
+  colorscheme darkplus
   " gruvbox settings
 
-  " config for gruvbox
-  set background=dark
-  colorscheme gruvbox
+  " " config for gruvbox
+  " set background=dark
+  " colorscheme gruvbox
 
+  " colorscheme nightfox
+  " colorscheme duskfox
   " " config for tokyonight
   " set background=dark
   " colorscheme tokyonight
