@@ -6,7 +6,7 @@ try
   "   set termguicolors
   " endif
   " colorscheme spaceduck
-  colorscheme darkplus
+  " colorscheme darkplus
   " gruvbox settings
 
   " " config for gruvbox
@@ -27,6 +27,8 @@ try
   " set t_Co=256   " This is may or may not needed.
   " set background=dark
   " colorscheme PaperColor
+
+  colorscheme onedark
 
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default

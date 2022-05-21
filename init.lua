@@ -1,10 +1,14 @@
 require "user.options"
 require "user.keymaps"
 require "user.plugins"
+--
+-- --------------- colorscheme -------------------
 -- require "user.spaceduck"
 -- require "user.tokyonight"
 -- require "user.nightfox"
+require "user.onedark"
 require "user.colorscheme"
+
 
 require "user.cmp"
 require "user.lsp"

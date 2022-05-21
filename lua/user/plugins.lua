@@ -72,6 +72,7 @@ return packer.startup(function(use)
   -- use 'folke/tokyonight.nvim'
   use 'NLKNguyen/papercolor-theme'
   use "EdenEast/nightfox.nvim" -- Packer
+  use 'navarasu/onedark.nvim'
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions

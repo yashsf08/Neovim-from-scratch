@@ -65,7 +65,8 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "solarized",
+		theme = "onedark",
+		-- theme = "solarized",
 		-- theme = "papercolor_dark",
 		-- theme = "gruvbox_dark",
 		-- theme = "horizon",
