@@ -27,15 +27,17 @@ local options = {
   cursorline = true,                       -- highlight the current line
   cursorcolumn = true,                     -- highlight the current column
   number = true,                           -- set numbered lines
-  relativenumber = false,                  -- set relative numbered lines
+  relativenumber = true,                  -- set relative numbered lines
   numberwidth = 4,                         -- set number column width to 2 {default 4}
-  -- signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
-  signcolumn = "number",                      -- always show the sign column, otherwise it would shift the text each time
+  signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
+  -- signcolumn = "number",                      -- always show the sign column, otherwise it would shift the text each time
   wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
-  autoread = true, 
+  autoread = true,
+  foldmethod = "expr",                    -- Enable code folding with rule as "expression" ("manual" is default value)
+  foldexpr = "nvim_treesitter#foldexpr()", -- Using code folding with treesitter
 }
 
 vim.opt.shortmess:append "c"
