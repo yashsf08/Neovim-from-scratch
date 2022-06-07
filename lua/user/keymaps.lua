@@ -71,13 +71,13 @@ keymap("i", "<C-s>", "<ESC>:w<CR>", opts)
 keymap("n", "<C-s>", ":w<CR>", opts)
 
 -- Word Manipulations
-keymap("n", "<C-u>", "gUiww", opts)
-keymap("n", "<C-d>", "guiww", opts)
+-- keymap("n", "<C-u>", "gUiww", opts)
+-- keymap("n", "<C-d>", "guiww", opts)
 
 
 -- Buffers 
 keymap("n", "<C-q>", ":q<CR>", opts) -- Close Windows
-keymap("n", "<leader>d", ":bd<CR>", opts) -- Delete Buffer
+-- keymap("n", "<leader>d", ":bd<CR>", opts) -- Delete Buffer - Already mapped to <leader>c
 
 -- Tab Normal
 keymap("n", "<Tab>", ">>", opts)
