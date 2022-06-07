@@ -4,6 +4,16 @@ if not status_ok then
 end
 
 local startify = require("alpha.themes.startify")
+startify.section.header.val = {
+  [[            .--.                  Try not.     ]],
+  [[ ::\`--._,'.::.`._.--'/::     Do or do not.    ]],
+  [[ ::::.  ` __::__ '  .::::    There is no try.  ]],
+  [[ ::::::-:.`'..`'.:-::::::                      ]],
+  [[ ::::::::\ `--' /::::::::              -Yoda   ]],
+}
+
+
+
 alpha.setup(startify.opts)
 
 
