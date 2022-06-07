@@ -11,18 +11,16 @@ local fmt = string.format
 -- "┃", "█", "", "", "", "", "", "", "●"
 
 local get_diag = function(str)
-  local diagnostics = vim.diagnostic.get(0, { severity = vim.diagnostic.severity[str] })
-  local count = #diagnostics
-
+  local count = vim.lsp.diagnostic.get_count(0, str)
   return (count > 0) and " " .. count .. " " or ""
 end
 
 local function vi_mode_hl()
-  return u.vi.colors[vim.fn.mode()] or "EdenSLViBlack"
+  return u.vi.colors[vim.fn.mode()] or "FlnViBlack"
 end
 
 local function vi_sep_hl()
-  return u.vi.sep[vim.fn.mode()] or "EdenSLBlack"
+  return u.vi.sep[vim.fn.mode()] or "FlnBlack"
 end
 
 local c = {
@@ -36,8 +34,8 @@ local c = {
   gitbranch = {
     provider = "git_branch",
     icon = " ",
-    hl = "EdenSLGitBranch",
-    right_sep = { str = "  ", hl = "EdenSLGitBranch" },
+    hl = "FlnGitBranch",
+    right_sep = { str = "  ", hl = "FlnGitBranch" },
     enabled = function()
       return vim.b.gitsigns_status_dict ~= nil
     end,
@@ -46,13 +44,13 @@ local c = {
     provider = function()
       return fmt(" %s ", vim.bo.filetype:upper())
     end,
-    hl = "EdenSLAlt",
+    hl = "FlnAlt",
   },
   fileinfo = {
     provider = { name = "file_info", opts = { type = "relative" } },
-    hl = "EdenSLAlt",
-    left_sep = { str = " ", hl = "EdenSLAltSep" },
-    right_sep = { str = " ", hl = "EdenSLAltSep" },
+    hl = "FlnAlt",
+    left_sep = { str = " ", hl = "FlnAltSep" },
+    right_sep = { str = "", hl = "FlnAltSep" },
   },
   file_enc = {
     provider = function()
@@ -60,7 +58,7 @@ local c = {
       return fmt(" %s %s ", os, vim.bo.fileencoding)
     end,
     hl = "StatusLine",
-    left_sep = { str = u.icons.left_filled, hl = "EdenSLAltSep" },
+    left_sep = { str = u.icons.left_filled, hl = "FlnAltSep" },
   },
   cur_position = {
     provider = function()
@@ -85,37 +83,37 @@ local c = {
     provider = function()
       return require("lsp-status").status()
     end,
-    hl = "EdenSLStatus",
-    left_sep = { str = "", hl = "EdenSLStatusBg", always_visible = true },
-    right_sep = { str = "", hl = "EdenSLErrorStatus", always_visible = true },
+    hl = "FlnStatus",
+    left_sep = { str = "", hl = "FlnStatusBg", always_visible = true },
+    right_sep = { str = "", hl = "FlnErrorStatus", always_visible = true },
   },
   lsp_error = {
     provider = function()
-      return get_diag("ERROR")
+      return get_diag("Error")
     end,
-    hl = "EdenSLError",
-    right_sep = { str = "", hl = "EdenSLWarnError", always_visible = true },
+    hl = "FlnError",
+    right_sep = { str = "", hl = "FlnWarnError", always_visible = true },
   },
   lsp_warn = {
     provider = function()
-      return get_diag("WARN")
+      return get_diag("Warning")
     end,
-    hl = "EdenSLWarn",
-    right_sep = { str = "", hl = "EdenSLInfoWarn", always_visible = true },
+    hl = "FlnWarn",
+    right_sep = { str = "", hl = "FlnInfoWarn", always_visible = true },
   },
   lsp_info = {
     provider = function()
-      return get_diag("INFO")
+      return get_diag("Information")
     end,
-    hl = "EdenSLInfo",
-    right_sep = { str = "", hl = "EdenSLHintInfo", always_visible = true },
+    hl = "FlnInfo",
+    right_sep = { str = "", hl = "FlnHintInfo", always_visible = true },
   },
   lsp_hint = {
     provider = function()
-      return get_diag("HINT")
+      return get_diag("Hint")
     end,
-    hl = "EdenSLHint",
-    right_sep = { str = "", hl = "EdenSLFtHint", always_visible = true },
+    hl = "FlnHint",
+    right_sep = { str = "", hl = "FlnBgHint", always_visible = true },
   },
 
   in_fileinfo = {
