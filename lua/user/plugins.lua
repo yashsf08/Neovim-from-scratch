@@ -73,6 +73,7 @@ return packer.startup(function(use)
   use 'NLKNguyen/papercolor-theme'
   use "EdenEast/nightfox.nvim" -- Packer
   use 'navarasu/onedark.nvim'
+  use 'shaunsingh/solarized.nvim'
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -82,7 +83,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
 
   -- File comparision
-  -- use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
 
   -- snippets
@@ -97,6 +98,9 @@ return packer.startup(function(use)
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
+
+  -- nvim-ts-rainbow -- Adding rainbow bracket extension for treesitter (treesitter.lua)
+  use "p00f/nvim-ts-rainbow"
 
   -- Treesitter
   use {
