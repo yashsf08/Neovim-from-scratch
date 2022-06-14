@@ -11,7 +11,7 @@ try
 
   " " config for gruvbox
   " set background=dark
-  " colorscheme gruvbox
+  colorscheme gruvbox
 
   " colorscheme nightfox
   " colorscheme duskfox
@@ -28,7 +28,7 @@ try
   " set background=dark
   " colorscheme PaperColor
 
-  colorscheme onedark
+  " colorscheme onedark
 
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default

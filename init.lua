@@ -7,8 +7,9 @@ require "user.plugins"
 -- require "user.tokyonight"
 -- require "user.nightfox"
 -- require "user.onedark"
-require "user.solarized"
--- require "user.colorscheme"
+-- require "user.solarized"
+require "user.ui.themes.gruvbox"
+require "user.colorscheme"
 
 
 require "user.cmp"
