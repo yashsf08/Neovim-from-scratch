@@ -96,6 +96,15 @@ local mappings = {
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
+  d = {
+    name = "DiffView",
+    c = { "<cmd>DiffviewClose<cr>", "close" },
+    o = { "<cmd>DiffviewOpen<cr>", "Open" },
+    h = { "<cmd>DiffviewFileHistory<cr>", "History" },
+    t = { "<cmd>DiffviewToggleFiles<cr>", "Toggle" },
+    r = { "<cmd>DiffviewRefresh<cr>", "refresh" },
+  },
+
   p = {
     name = "Packer",
     c = { "<cmd>PackerCompile<cr>", "Compile" },
