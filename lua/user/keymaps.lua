@@ -59,6 +59,9 @@ keymap("n", "K", "6k", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
+keymap("n", "<CR>", "o<Esc>", opts)
+-- keymap("n", "<S-CR>", "O<Esc>", opts) -- Not working
+
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
