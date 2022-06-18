@@ -65,10 +65,10 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		-- theme = "onedark",
+		-- theme = "spaceduck",
 		-- theme = "solarized",
 		-- theme = "papercolor_dark",
-		-- theme = "gruvbox",
+		theme = "gruvbox",
 		-- theme = "horizon",
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
