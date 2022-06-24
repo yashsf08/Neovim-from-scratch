@@ -12,7 +12,7 @@ try
 
   " ------------- Gruvbox ----------------
   " set background=dark
-  colorscheme gruvbox
+  " colorscheme gruvbox
 
   " ------------- nightfox ----------------
   " colorscheme nightfox
@@ -33,7 +33,7 @@ try
   " colorscheme PaperColor
 
   " ------------- Onedark ----------------
-  " colorscheme onedark
+  colorscheme onedark
 
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default

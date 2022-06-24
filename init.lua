@@ -6,9 +6,9 @@ require "user.plugins"
 -- require "user.spaceduck"
 -- require "user.tokyonight"
 -- require "user.nightfox"
--- require "user.onedark"
+require "user.ui.onedark"
 -- require "user.solarized"
-require "user.ui.gruvbox"
+-- require "user.ui.gruvbox"
 require "user.colorscheme"
 
 

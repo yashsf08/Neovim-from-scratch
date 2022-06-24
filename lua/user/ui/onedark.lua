@@ -7,10 +7,10 @@ end
 
 onedark.setup  {
     -- Main options --
-    style = 'deep', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    style = 'warmer', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
     transparent = false,  -- Show/hide background
     term_colors = true, -- Change terminal color as per the selected theme style
-    ending_tildes = true, -- Show the end-of-buffer tildes. By default they are hidden
+    ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
     cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
     -- toggle theme style ---
     toggle_style_key = '<leader>ts', -- Default keybinding to toggle
@@ -23,7 +23,7 @@ onedark.setup  {
     code_style = {
         comments = 'italic',
         keywords = 'italic,bold',
-        functions = 'italic',
+        functions = 'bold',
         strings = 'none',
         variables = 'bold'
     },
