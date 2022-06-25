@@ -84,30 +84,6 @@ return packer.startup(function(use)
 
   -- File comparision
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
-  -- LF File Manager 
-  -- use(
-  --     {
-  --         "lmburns/lf.nvim",
-  --         -- config = function()
-  --         --   -- This feature will not work if the plugin is lazy-loaded
-  --         --   vim.g.lf_netrw = 1
-  --         --
-  --         --   require("lf").setup(
-  --         --       {
-  --         --           escape_quit = false,
-  --         --           border = "rounded",
-  --         --           highlights = {FloatBorder = {guifg = require("kimbox.palette").colors.magenta}}
-  --         --       }
-  --         --   )
-  --         --
-  --         --   vim.keymap.set("n", "<C-o>", ":Lf<CR>")
-  --         -- end,
-  --         requires = {
-  --             "plenary.nvim",
-  --             "toggleterm.nvim"
-  --         }
-  --     }
-  -- )
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
