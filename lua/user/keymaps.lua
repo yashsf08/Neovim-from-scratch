@@ -116,7 +116,7 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- Editor & Personal Settings
 
   -- Adding space after every comma
-keymap("i", ",", ",<Space>", opts)
+-- keymap("i", ",", ",<Space>", opts)
   -- Delete Character in insert mode
 keymap("i", "<C-d>", "<Del>", opts)
 
