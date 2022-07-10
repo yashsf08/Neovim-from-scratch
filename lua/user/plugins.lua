@@ -69,11 +69,11 @@ return packer.startup(function(use)
   use "lunarvim/darkplus.nvim"
   use "pineapplegiant/spaceduck"
   use "morhetz/gruvbox"
+  use "matsuuu/pinkmare"
   -- use 'folke/tokyonight.nvim'
-  use 'NLKNguyen/papercolor-theme'
   use "EdenEast/nightfox.nvim" -- Packer
   use 'navarasu/onedark.nvim'
-  use 'shaunsingh/solarized.nvim'
+  use 'ishan9299/nvim-solarized-lua'
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -114,7 +114,13 @@ return packer.startup(function(use)
   ------------- MY PLUGINS -----------------------------
   -- Surround Plugins
   use "machakann/vim-sandwich"
-  use 'feline-nvim/feline.nvim'
+
+  -- Org Mode for Neovim
+  use 'nvim-orgmode/orgmode'
+  -- use {'nvim-orgmode/orgmode', config = function()
+  --         require('orgmode').setup{}
+  -- end
+  -- }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
