@@ -17,7 +17,8 @@ try
   " ------------- nightfox ----------------
   " colorscheme nightfox
   " colorscheme duskfox
-  " " config for tokyonight
+
+  " ------------- tokyonight ----------------
   " set background=dark
   " colorscheme tokyonight
 
@@ -33,7 +34,13 @@ try
   " colorscheme PaperColor
 
   " ------------- Onedark ----------------
-  colorscheme onedark
+  " colorscheme onedark
+
+  " ------------- PinkMare ----------------
+  " colorscheme pinkmare
+
+  " ------------- PinkMare ----------------
+  colorscheme solarized-high
 
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default

@@ -65,12 +65,14 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
+    -- theme = "auto",
+    -- theme = "duskfox",
 		-- theme = "spaceduck",
-		-- theme = "solarized",
+		theme = "solarized",
 		-- theme = "papercolor_dark",
 		-- theme = "gruvbox",
 		-- theme = "horizon",
-		theme = "onedark",
+		-- theme = "onedark",
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },

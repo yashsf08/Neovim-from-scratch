@@ -1,11 +1,5 @@
--- Example config in lua
-vim.g.solarized_italic_comments = true
-vim.g.solarized_italic_keywords = true
-vim.g.solarized_italic_functions = true
-vim.g.solarized_italic_variables = false
-vim.g.solarized_contrast = false
-vim.g.solarized_borders = true
-vim.g.solarized_disable_background = false
-
--- Load the colorscheme
-require('solarized').set()
+vim.g.solarized_italics = 1
+vim.g.solarized_visibility = 'high'
+vim.g.solarized_diffmode = 'high'
+vim.g.solarized_termtrans = 0
+vim.g.solarized_statusline = 'normal'
