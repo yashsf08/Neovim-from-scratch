@@ -70,9 +70,7 @@ end
 
 require('lualine').setup {
   options = {
-    -- theme = theme,
-    -- theme = "papercolor_dark",
-    theme = "dracula",
+    theme = theme,
     component_separators = '',
     section_separators = { left = '', right = '' },
   },
