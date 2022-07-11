@@ -80,13 +80,13 @@ lualine.setup({
     globalstatus = false,
 	},
 	sections = {
-		lualine_a = { branch, diagnostics },
-		lualine_b = { mode },
-		lualine_c = {},
+		lualine_a = { mode },
+		lualine_b = { --[[ branch ]] diagnostics },
+		lualine_c = { diff },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { diff, spaces, "encoding", filetype },
-		lualine_y = { location },
-		lualine_z = { progress },
+		lualine_x = { spaces, "encoding" },
+		lualine_y = { filetype, "fileformat" },
+    lualine_z = { '%l:%c', '%p%%/%L' },
 	},
 	inactive_sections = {
 		lualine_a = {},
@@ -98,10 +98,10 @@ lualine.setup({
 	},
   tabline = {
     lualine_a = {'buffers'},
-    lualine_b = {'branch'},
-    lualine_c = {'filename'},
+    -- lualine_b = {'filename'},
+    -- lualine_c = {'filename'},
     lualine_x = {},
-    lualine_y = {},
+    lualine_y = {'branch'},
     lualine_z = {'tabs'}
   },
 	extensions = {},
