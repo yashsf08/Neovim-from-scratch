@@ -11,3 +11,6 @@ vim.g.gruvbox_invert_selection = 1
 -- vim.g.gruvbox_improved_warnings = 1
 -- vim.g.gruvbox_guisp_fallback = 'fg'
 
+-- setup must be called before loading
+vim.cmd("colorscheme gruvbox")
+

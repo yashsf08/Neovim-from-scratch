@@ -74,6 +74,8 @@ return packer.startup(function(use)
   use "EdenEast/nightfox.nvim" -- Packer
   use 'navarasu/onedark.nvim'
   use 'ishan9299/nvim-solarized-lua'
+  use 'Mofiqul/dracula.nvim'
+
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
