@@ -8,9 +8,11 @@ require "user.plugins"
 -- require "user.ui.nightfox"
 -- require "user.ui.pinkmare"
 -- require "user.ui.onedark"
-require "user.solarized"
+-- require "user.solarized"
 -- require "user.ui.gruvbox"
-require "user.colorscheme"
+require "user.ui.dracula"
+-- require "user.ui.pinkmare"
+-- require "user.colorscheme"
 
 
 require "user.cmp"
