@@ -25,11 +25,11 @@ vim.g.dracula_colors = {
   nontext = "#3B4048",
 }
 -- show the '~' characters after the end of buffers
-vim.g.dracula_show_end_of_buffer = true
+vim.g.dracula_show_end_of_buffer = false
 -- use transparent background
 vim.g.dracula_transparent_bg = false
 -- set custom lualine background color
-vim.g.dracula_lualine_bg_color = "#44475a"
+vim.g.dracula_lualine_bg_color = "#0E1419"
 -- set italic comment
 vim.g.dracula_italic_comment = true
 

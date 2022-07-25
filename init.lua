@@ -11,7 +11,6 @@ require "user.plugins"
 -- require "user.solarized"
 -- require "user.ui.gruvbox"
 require "user.ui.dracula"
--- require "user.ui.pinkmare"
 -- require "user.colorscheme"
 
 
