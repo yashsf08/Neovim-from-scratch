@@ -1,7 +1,8 @@
 -- customize dracula color palette
+
 vim.g.dracula_colors = {
-  -- bg = "#282A36",
-  bg = "#0E1419",
+  bg = "#282A36",
+  -- bg = "#0E1419",
   fg = "#F8F8F2",
   selection = "#44475A",
   comment = "#6272A4",
@@ -24,13 +25,14 @@ vim.g.dracula_colors = {
   gutter_fg = "#4B5263",
   nontext = "#3B4048",
 }
+
 -- show the '~' characters after the end of buffers
 vim.g.dracula_show_end_of_buffer = false
--- use transparent background
+--juse transparent background
 vim.g.dracula_transparent_bg = false
 -- set custom lualine background color
-vim.g.dracula_lualine_bg_color = "#0E1419"
--- set italic comment
+vim.g.dracula_lualine_bg_color = "#282A36"
+-- jet italic comment
 vim.g.dracula_italic_comment = true
 
 

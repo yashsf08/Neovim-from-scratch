@@ -4,7 +4,6 @@ if not filename_ok then
 end
 
 
-require("user.ui.colors")
 local util = require("tabby.util")
 
 local hl_tabline = util.extract_nvim_hl("TabLine")
