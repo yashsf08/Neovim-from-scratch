@@ -39,14 +39,14 @@ local config = {
     -- Disable sections and component separators
     component_separators = '',
     section_separators = '',
-    -- theme = "auto",
-    theme = {
-      -- We are going to use lualine_c an lualine_x as left and
-      -- right section. Both are highlighted by c theme .  So we
-      -- are just setting default looks o statusline
-      normal = { c = { fg = colors.fg, bg = colors.bg } },
-      inactive = { c = { fg = colors.fg, bg = colors.bg } },
-    },
+    theme = "auto",
+    -- theme = {
+    --   -- We are going to use lualine_c an lualine_x as left and
+    --   -- right section. Both are highlighted by c theme .  So we
+    --   -- are just setting default looks o statusline
+    --   normal = { c = { fg = colors.fg, bg = colors.bg } },
+    --   inactive = { c = { fg = colors.fg, bg = colors.bg } },
+    -- },
   },
   sections = {
     -- these are to remove the defaults
@@ -68,7 +68,7 @@ local config = {
     lualine_x = {},
   },
   tabline = {
-    -- lualine_a = {'buffers'},
+    lualine_a = {'buffers'},
     -- lualine_b = {'branch'},
     lualine_c = {'filename'},
     lualine_x = {},

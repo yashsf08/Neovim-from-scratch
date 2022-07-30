@@ -34,7 +34,7 @@ local mode = {
 local filetype = {
 	"filetype",
 	icons_enabled = false,
-	icon = nil,
+	-- icon = nil,
 }
 
 local branch = {
@@ -65,12 +65,13 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-    -- theme = "auto",
+    theme = "auto",
+    -- theme = "nightfox",
     -- theme = "duskfox",
 		-- theme = "spaceduck",
 		-- theme = "solarized",
 		-- theme = "papercolor_dark",
-		theme = "gruvbox",
+		-- theme = "gruvbox",
 		-- theme = "dracula-nvim",
 		-- theme = "dracula",
 		-- theme = "horizon",

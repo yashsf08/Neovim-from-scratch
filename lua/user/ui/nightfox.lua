@@ -15,7 +15,7 @@ require('nightfox').setup({
       keywords = "bold",
       numbers = "NONE",
       operators = "NONE",
-      strings = "italic",
+      strings = "NONE",
       types = "italic,bold",
       variables = "NONE",
     },

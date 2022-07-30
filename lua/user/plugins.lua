@@ -70,7 +70,7 @@ return packer.startup(function(use)
   use "pineapplegiant/spaceduck"
   use "morhetz/gruvbox"
   use "matsuuu/pinkmare"
-  -- use 'folke/tokyonight.nvim'
+  use 'folke/tokyonight.nvim'
   use "EdenEast/nightfox.nvim" -- Packer
   use 'navarasu/onedark.nvim'
   use 'ishan9299/nvim-solarized-lua'
