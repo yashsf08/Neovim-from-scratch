@@ -1,7 +1,7 @@
 local options = {
   backup = false,                          -- creates a backup file
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
-  cmdheight = 2,                           -- more space in the neovim command line for displaying messages
+  cmdheight = 1,                           -- more space in the neovim command line for displaying messages
   completeopt = { "menuone", "noselect" }, -- mostly just for cmp
   conceallevel = 0,                        -- so that `` is visible in markdown files
   fileencoding = "utf-8",                  -- the encoding written to a file
@@ -18,26 +18,30 @@ local options = {
   swapfile = false,                        -- creates a swapfile
   termguicolors = true,                    -- set term gui colors (most terminals support this)
   timeoutlen = 100,                        -- time to wait for a mapped sequence to complete (in milliseconds)
-  undofile = false,                         -- enable persistent undo | Remember undo from previous sessions
+  undofile = false,                        -- enable persistent undo | Remember undo from previous sessions
   updatetime = 300,                        -- faster completion (4000ms default)
   writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   expandtab = true,                        -- convert tabs to spaces
   shiftwidth = 2,                          -- the number of spaces inserted for each indentation
   tabstop = 2,                             -- insert 2 spaces for a tab
   cursorline = true,                       -- highlight the current line
-  cursorcolumn = true,                     -- highlight the current column
+  cursorcolumn = false,                    -- highlight the current column
   number = true,                           -- set numbered lines
   relativenumber = false,                  -- set relative numbered lines
-  numberwidth = 4,                         -- set number column width to 2 {default 4}
-  signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
-  -- signcolumn = "number",                      -- always show the sign column, otherwise it would shift the text each time
+  numberwidth = 2,                         -- set number column width to 2 {default 4}
+  signcolumn = "no",                       -- always show the sign column, otherwise it would shift the text each time (yes | no | number)
   wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
-  guifont = "JuliaMono:h11",               -- the font used in graphical neovim applications
+  -- guifont = "JuliaMono:h11",               -- the font used in graphical neovim applications
+  guifont = "Operator Mono:h12",               -- the font used in graphical neovim applications
   autoread = true,                         -- autoreload file when something change
-  foldmethod = "expr",                    -- Enable code folding with rule as "expression" ("manual" is default value)
+  foldmethod = "expr",                     -- Enable code folding with rule as "expression" ("manual" is default value)
   foldexpr = "nvim_treesitter#foldexpr()", -- Using code folding with treesitter
+  -- foldopen = "all"                      -- automatic unfold as you jump to the position ( all | block | hor | insert | jump | mark | percent | quickfix | search | tab | undo )
+  -- foldclose = "all"                        
+  -- nofoldenable = "no",                     -- disable auto code folding on files
+  hidden = false,
 }
 
 vim.opt.shortmess:append "c"
@@ -46,9 +50,10 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
+vim.cmd "set nofen"
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
-vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+vim.cmd [[set formatoptions-=cro]] -- NOTE: this doesn't seem to work
 vim.cmd [[ 
     " trigger `autoread` when files changes on disk
       set autoread
