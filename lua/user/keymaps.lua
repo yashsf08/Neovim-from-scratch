@@ -21,9 +21,15 @@ vim.g.maplocalleader = " "
 -- Leader Key Mapping
 keymap("n", "<Leader>h", ":noh<CR>", opts)
 
-
+-- change tabs
+keymap("n", "<F1>", ":tabprev<CR>", opts)
+keymap("v", "<F1>", ":tabprev<CR>", opts)
+keymap("i", "<F1>", "<Esc>", opts)
 
 -- Normal --
+
+
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -41,8 +47,13 @@ keymap("n", "<C-Left>", ":vertical resize -5<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +5<CR>", opts)
 
 -- Navigate buffers
+keymap("n", "<F2>", ":bnext<CR>", opts) -- cycles through buffrers
 keymap("n", "<A-l>", ":bnext<CR>", opts)
 keymap("n", "<A-h>", ":bprevious<CR>", opts)
+
+-- Buffer Reload
+keymap("n", "<F5>", ":e!<CR>", opts)
+
 
 -- Start and end of line
 keymap("n", "<S-h>", "^", opts)
@@ -76,6 +87,8 @@ keymap("n", "<C-s>", ":w<CR>", opts)
 -- Word Manipulations
 -- keymap("n", "<C-u>", "gUiww", opts)
 -- keymap("n", "<C-d>", "guiww", opts)
+keymap("n", "<C-u>", "12k", opts)
+keymap("n", "<C-d>", "12j", opts)
 
 
 -- Buffers 
@@ -83,8 +96,21 @@ keymap("n", "<C-q>", ":q<CR>", opts) -- Close Windows
 -- keymap("n", "<leader>d", ":bd<CR>", opts) -- Delete Buffer - Already mapped to <leader>c
 
 -- Tab Normal
-keymap("n", "<Tab>", ">>", opts)
-keymap("n", "<S-Tab>", "<<", opts)
+-- keymap("n", "<Tab>", ">>", opts)
+-- keymap("n", "<S-Tab>", "<<", opts)
+keymap("n", ">", ">>", opts)
+keymap("n", "<", "<<", opts)
+
+
+-- adds comment in insert mode
+-- keymap("n", "<C-v><C-/>", ":<Esc>gccA", opts)
+keymap("i", "<C-_>", "<Esc>gccA", opts)
+
+
+-- go nearby surround
+keymap("n", "<Tab>", "%", opts)
+-- keymap("n", "<Tab>", "]", opts)
+-- keymap("n", "<S-Tab>", "[%", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -121,6 +147,16 @@ keymap("i", ",", ", ", opts)
   -- Delete Character in insert mode
 keymap("i", "<C-d>", "<Del>", opts)
 
+
+-- settings for c++ build
+keymap("n", "<F8>", ":!gcc -lstdc++ -std=c++14 % && ./a.out", opts)
+keymap("n", "<F3>", ":!gcc -lstdc++ -std=c++14 -lm -ldl % -o %:r && %:r < %:p:h/input.txt > %:p:h/output.txt<CR>", opts)
+-- keymap("n", "<F8>", "<ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -DONPC -O2 -o %< % && ./%< < input.txt<CR>", opts)
+keymap("i", "<F8>", "<ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -DONPC -O2 -o %< % && ./%< < input.txt<CR>", opts)
+keymap("n", "<F9>", "<ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>", opts)
+keymap("i", "<F9>", "<ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>", opts)
+keymap("n", "<F10>", "<ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< < inp<CR>", opts)
+keymap("i", "<F10>", '<ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o "%<" "%" && "./%<" < inp<CR>', opts)
 
 
 -- Personal Tweaks
