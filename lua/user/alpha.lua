@@ -4,12 +4,22 @@ if not status_ok then
 end
 
 local startify = require("alpha.themes.startify")
+
+-- startify.section.header.val = {
+--   [[            .--.                  Try not.     ]],
+--   [[ ::\`--._,'.::.`._.--'/::     Do or do not.    ]],
+--   [[ ::::.  ` __::__ '  .::::    There is no try.  ]],
+--   [[ ::::::-:.`'..`'.:-::::::                      ]],
+--   [[ ::::::::\ `--' /::::::::              -Yoda   ]],
+-- }
+
 startify.section.header.val = {
-  [[            .--.                  Try not.     ]],
-  [[ ::\`--._,'.::.`._.--'/::     Do or do not.    ]],
-  [[ ::::.  ` __::__ '  .::::    There is no try.  ]],
-  [[ ::::::-:.`'..`'.:-::::::                      ]],
-  [[ ::::::::\ `--' /::::::::              -Yoda   ]],
+     [[ ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗]],
+     [[ ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║]],
+     [[ ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║]],
+     [[ ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║]],
+     [[ ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║]],
+     [[ ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝]],
 }
 
 
@@ -27,31 +37,31 @@ alpha.setup(startify.opts)
 -- 	[[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
 -- }
 -- -- Can only be used with dashboard theme
--- -- dashboard.section.buttons.val = {
--- -- 	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
--- -- 	dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
--- -- 	dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
--- -- 	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
--- -- 	dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
--- -- 	dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
--- -- 	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
--- -- }
--- 
+-- dashboard.section.buttons.val = {
+-- 	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
+-- 	dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+-- 	dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
+-- 	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
+-- 	dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
+-- 	dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
+-- 	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
+-- }
+--
 -- local function footer()
 -- -- NOTE: requires the fortune-mod package to work
--- 	-- local handle = io.popen("fortune")
--- 	-- local fortune = handle:read("*a")
--- 	-- handle:close()
--- 	-- return fortune
--- 	return "chrisatmachine.com"
+-- 	local handle = io.popen("fortune")
+-- 	local fortune = handle:read("*a")
+-- 	handle:close()
+-- 	return fortune
+-- 	-- return "chrisatmachine.com"
 -- end
--- 
+--
 -- dashboard.section.footer.val = footer()
--- 
+--
 -- dashboard.section.footer.opts.hl = "Type"
 -- dashboard.section.header.opts.hl = "Include"
 -- dashboard.section.buttons.opts.hl = "Keyword"
--- 
+--
 -- dashboard.opts.opts.noautocmd = true
 -- -- vim.cmd([[autocmd User AlphaReady echo 'ready']])
 -- alpha.setup(dashboard.opts)
