@@ -3,7 +3,8 @@ local M = {}
 -- TODO: backfill this to template
 M.setup = function()
   local signs = {
-    { name = "DiagnosticSignError", text = "" },
+    -- { name = "DiagnosticSignError", text = "" },
+    { name = "DiagnosticSignError", text = "🔥" },
     { name = "DiagnosticSignWarn", text = "" },
     { name = "DiagnosticSignHint", text = "" },
     { name = "DiagnosticSignInfo", text = "" },
@@ -16,6 +17,7 @@ M.setup = function()
   local config = {
     -- disable virtual text
     virtual_text = false,
+    -- virtual_text = { spacing = 4, prefix = "●" },
     -- show signs
     signs = {
       active = signs,
@@ -24,9 +26,9 @@ M.setup = function()
     underline = true,
     severity_sort = true,
     float = {
-      focusable = false,
+      focusable = true,
       style = "minimal",
-      border = "rounded",
+      border = "rounded",  --  rounded | single
       source = "always",
       header = "",
       prefix = "",
