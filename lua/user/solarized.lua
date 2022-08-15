@@ -3,3 +3,5 @@ vim.g.solarized_visibility = 'high'
 vim.g.solarized_diffmode = 'high'
 vim.g.solarized_termtrans = 0
 vim.g.solarized_statusline = 'normal'
+vim.cmd "colorscheme solarized-high"
+
