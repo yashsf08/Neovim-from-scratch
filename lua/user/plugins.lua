@@ -56,6 +56,7 @@ return packer.startup(function(use)
 
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
+  use 'feline-nvim/feline.nvim'
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
@@ -115,14 +116,7 @@ return packer.startup(function(use)
 
   ------------- MY PLUGINS -----------------------------
   -- Surround Plugins
-  use "machakann/vim-sandwich"
-
-  -- Org Mode for Neovim
-  use 'nvim-orgmode/orgmode'
-  -- use {'nvim-orgmode/orgmode', config = function()
-  --         require('orgmode').setup{}
-  -- end
-  -- }
+  -- use "machakann/vim-sandwich"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
