@@ -6,7 +6,6 @@ require "user.tokyonight"
 -- require "user.solarized"
 -- require "user.ui.gruvbox"
 -- require "user.ui.dracula"
--- require "user.solarized"
 
 -- vim.cmd [[
 -- try
