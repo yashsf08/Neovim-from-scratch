@@ -7,9 +7,11 @@ vim.g.gruvbox_italicize_comments = 1
 -- vim.g.gruvbox_italicize_strings = 1
 vim.g.gruvbox_invert_selection = 0
 vim.g.gruvbox_invert_tabline = 0
-vim.g.gruvbox_improved_strings = 2
-vim.g.gruvbox_improved_warnings = 1
+vim.g.gruvbox_improved_strings = 0
+vim.g.gruvbox_improved_warnings = 0
 -- vim.g.gruvbox_guisp_fallback = 'fg'
+vim.g.gruvbox_invert_tabline = 0
+vim.g.gruvbox_invert_indent_guides = 0
 
 -- setup must be called before loading
 vim.cmd("colorscheme gruvbox")

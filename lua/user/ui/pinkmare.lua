@@ -1,2 +1,5 @@
 -- setup must be called before loading
-vim.cmd("colorscheme pinkmare")
+vim.cmd [[
+  set termguicolors
+  colorscheme pinkmare
+]]
