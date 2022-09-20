@@ -87,8 +87,8 @@ keymap("n", "<C-s>", ":w<CR>", opts)
 -- Word Manipulations
 -- keymap("n", "<C-u>", "gUiww", opts)
 -- keymap("n", "<C-d>", "guiww", opts)
-keymap("n", "<C-u>", "12k", opts)
-keymap("n", "<C-d>", "12j", opts)
+keymap("n", "<C-u>", "16k", opts)
+keymap("n", "<C-d>", "16j", opts)
 
 
 -- Buffers 
@@ -104,7 +104,7 @@ keymap("n", "<", "<<", opts)
 
 -- adds comment in insert mode
 -- keymap("n", "<C-v><C-/>", ":<Esc>gccA", opts)
-keymap("i", "<C-_>", "<Esc>gccA", opts)
+keymap("i", "<C-_>", "<C-o>gcc", opts)
 
 
 -- go nearby surround
