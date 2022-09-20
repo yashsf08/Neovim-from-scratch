@@ -65,7 +65,8 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-    theme = "auto",
+    -- theme = "auto",
+    theme = "tokyonight",
     -- theme = "nightfox",
     -- theme = "duskfox",
 		-- theme = "spaceduck",
@@ -84,7 +85,7 @@ lualine.setup({
 	},
 	sections = {
 		lualine_a = { mode },
-		lualine_b = { --[[ branch ]] diagnostics },
+		lualine_b = {  branch, diagnostics },
 		lualine_c = { diff },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { spaces, "encoding" },
@@ -95,17 +96,17 @@ lualine.setup({
 		lualine_a = {},
 		lualine_b = {},
 		lualine_c = { "filename" },
-		lualine_x = { "location" },
+		lualine_x = { location },
 		lualine_y = {},
 		lualine_z = {},
 	},
   tabline = {
-    lualine_a = {'buffers'},
+    -- lualine_a = {'buffers'},
     -- lualine_b = {'filename'},
     -- lualine_c = {'filename'},
-    lualine_x = {},
-    lualine_y = {'branch'},
-    lualine_z = {'tabs'}
+    -- lualine_x = {},
+    -- lualine_y = { branch },
+    -- lualine_z = {'tabs'}
   },
 	extensions = {},
 })
