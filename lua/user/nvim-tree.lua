@@ -32,6 +32,7 @@ vim.g.show_icons = {
 vim.g.git_hl = 1
 -- vim.g.root_folder_modifier = ":t"
 vim.g.root_folder_modifier = ":~"
+-- vim.g.auto_close = true
 
 
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
@@ -86,7 +87,7 @@ nvim_tree.setup {
   },
   git = {
     enable = true,
-    ignore = true,
+    ignore = false,
     timeout = 500,
   },
   view = {
@@ -130,6 +131,30 @@ nvim_tree.setup {
       },
     },
   },
+  renderer = {
+    icons = {
+      glyphs = {
+              default = "",
+              symlink = "",
+              git = {
+                unstaged = "",
+                staged = "S",
+                unmerged = "",
+                renamed = "➜",
+                deleted = "",
+                untracked = "U",
+                ignored = "◌",
+              },
+              folder = {
+                default = "",
+                open = "",
+                empty = "",
+                empty_open = "",
+                symlink = "",
+              },
+          }
+    }
+  },
   -- quit_on_open = false,
-  disable_window_picker = 0,
+  -- disable_window_picker = 0,
 }
