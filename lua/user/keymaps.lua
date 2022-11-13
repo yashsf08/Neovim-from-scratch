@@ -8,7 +8,11 @@ local keymap = vim.api.nvim_set_keymap
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+--[[ vim.g.maplocalleader = " " ]]
+
+--fast ex command mode
+keymap("n", ";", ":", {noremap = true, silent = false})
+keymap("n", ":", ";", {noremap = true, silent = false})
 
 -- Modes
 --   normal_mode = "n",
@@ -21,14 +25,22 @@ vim.g.maplocalleader = " "
 -- Leader Key Mapping
 keymap("n", "<Leader>h", ":noh<CR>", opts)
 
--- change tabs
-keymap("n", "<F1>", ":tabprev<CR>", opts)
-keymap("v", "<F1>", ":tabprev<CR>", opts)
-keymap("i", "<F1>", "<Esc>", opts)
+-- Create new tab
+keymap("n", "<F1>", ":tabnew<CR>", opts)
+keymap("v", "<F1>", "<Esc>:tabnew<CR>", opts)
+keymap("i", "<F1>", "<Esc>:tabnew<CR>", opts)
+
+-- Change Tabs
+keymap("n", "<F2>", ":tabnext<CR>", opts)
+keymap("v", "<F2>", "<Esc>:tabnext<CR>", opts)
+keymap("i", "<F2>", "<Esc>:tabnext<CR>", opts)
+
+-- Close Tab
+keymap("n", "<F6>", ":tabclose<CR>", opts)
+keymap("v", "<F6>", "<Esc>:tabclose<CR>", opts)
+keymap("i", "<F6>", "<Esc>:tabclose<CR>", opts)
 
 -- Normal --
-
-
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -84,11 +96,14 @@ keymap("i", "<C-c>", "<Esc>", opts)
 keymap("i", "<C-s>", "<ESC>:w<CR>", opts)
 keymap("n", "<C-s>", ":w<CR>", opts)
 
--- Word Manipulations
+-- Change Caps
 -- keymap("n", "<C-u>", "gUiww", opts)
 -- keymap("n", "<C-d>", "guiww", opts)
-keymap("n", "<C-u>", "16k", opts)
-keymap("n", "<C-d>", "16j", opts)
+
+
+-- fast traverse
+--[[ keymap("n", "<C-u>", "16k", opts) ]]
+--[[ keymap("n", "<C-d>", "16j", opts) ]]
 
 
 -- Buffers 
@@ -101,16 +116,14 @@ keymap("n", "<C-q>", ":q<CR>", opts) -- Close Windows
 keymap("n", ">", ">>", opts)
 keymap("n", "<", "<<", opts)
 
-
 -- adds comment in insert mode
 -- keymap("n", "<C-v><C-/>", ":<Esc>gccA", opts)
-keymap("i", "<C-_>", "<C-o>gcc", opts)
-
+keymap("i", "<C-_>", "<Esc>gccA", { noremap = false, silent = true })
 
 -- go nearby surround
 keymap("n", "<Tab>", "%", opts)
--- keymap("n", "<Tab>", "]", opts)
--- keymap("n", "<S-Tab>", "[%", opts)
+--[[ keymap("n", "<Tab>", "]%", {noremap = false, silent = true}) ]]
+--[[ keymap("n", "<S-Tab>", "[%", {noremap = false, silent = true}) ]]
 
 -- Visual --
 -- Stay in indent mode
