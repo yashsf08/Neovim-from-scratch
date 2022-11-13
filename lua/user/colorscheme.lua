@@ -1,11 +1,13 @@
--- require "user.spaceduck"
-require "user.tokyonight"
--- require "user.ui.nightfox"
--- require "user.ui.pinkmare"
--- require "user.ui.onedark"
--- require "user.solarized"
--- require "user.ui.gruvbox"
--- require "user.ui.dracula"
+--[[ require "user.tokyonight" ]]
+--[[ require "user.ui.nightfox" ]]
+--[[ require "user.ui.pinkmare" ]]
+require "user.ui.onedark"
+--[[ require "user.solarized" ]]
+--[[ require "user.ui.dracula" ]]
+--[[ require "user.ui.github-theme" ]]
+--[[ require "user.ui.gruvbox" ]]
+--[[ require "user.ui.spaceduck" ]]
+
 
 -- vim.cmd [[
 -- try
