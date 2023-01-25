@@ -65,7 +65,7 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-    --[[ theme = "auto", ]]
+    theme = "auto",
     -- theme = "tokyonight",
     -- theme = "nightfox",
     -- theme = "duskfox",
@@ -73,7 +73,7 @@ lualine.setup({
 		-- theme = "solarized",
 		-- theme = "papercolor_dark",
 		-- theme = "gruvbox",
-		theme = "dracula-nvim",
+		--[[ theme = "dracula-nvim", ]]
 		-- theme = "dracula",
 		-- theme = "horizon",
 		-- theme = "onedark",
