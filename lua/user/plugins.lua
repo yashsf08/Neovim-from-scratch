@@ -126,6 +126,16 @@ return packer.startup(function(use)
     after = {"nvim-cmp"}
   }
 
+  -- orgmode
+  
+  use {
+    'nvim-orgmode/orgmode',
+    ft = {'org'},
+    config = function()
+      require('orgmode').setup{}
+    end
+  }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
