@@ -135,6 +135,16 @@ return packer.startup(function(use)
       require('orgmode').setup{}
     end
   }
+  
+  -- AI Assistence
+  -- Remove the `use` here if you're using folke/lazy.nvim.
+  use {
+    'Exafunction/codeium.vim',
+     requires = {
+        "nvim-lua/plenary.nvim",
+        "hrsh7th/nvim-cmp",
+    },
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

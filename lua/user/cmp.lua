@@ -43,6 +43,7 @@ local kind_icons = {
   Event = "",
   Operator = "",
   TypeParameter = "",
+  Codeium = "",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
@@ -149,6 +150,7 @@ cmp.setup {
     { name = "buffer" },
     { name = "path" },
     { name = "orgmode" },
+    { name = "codeium" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
