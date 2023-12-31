@@ -41,3 +41,7 @@ luac.out
 
 
 plugin/packer_compiled.lua
+testing.backup
+lua/user/colorscheme.lua
+lua/user/colorscheme.lua
+*.backup
