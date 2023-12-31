@@ -17,5 +17,5 @@ vim.g.tokyonight_lualine_bold = true -- When true, section headers in the lualin
 
 -- Change the "hint" color to the "orange" color, and make the "error" color bright red
 vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000", dark5 = "orange"}
-vim.cmd "colorscheme tokyonight"
+vim.cmd "colorscheme tokyonight-night"
 

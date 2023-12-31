@@ -121,9 +121,9 @@ return packer.startup(function(use)
   -- Lua
   use {
     "abecodes/tabout.nvim",
-    require = {"nvim-treesitter"},
+    wants = {'nvim-treesitter'}, -- or require if not used so far
+    after = {'nvim-cmp'} -- if a completion plugin is using tabs load it before
     --[[ after = {"completion-nvim"} ]]
-    after = {"nvim-cmp"}
   }
 
   -- orgmode
