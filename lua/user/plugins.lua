@@ -42,10 +42,10 @@ packer.init {
 return packer.startup(function(use)
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-  use "numToStr/Comment.nvim" -- Easily comment stuff
+  use "nvim-lua/popup.nvim"    -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim"  -- Useful lua functions used ny lots of plugins
+  use "windwp/nvim-autopairs"  -- Autopairs, integrates with both cmp and treesitter
+  use "numToStr/Comment.nvim"  -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
 
@@ -78,10 +78,10 @@ return packer.startup(function(use)
   use 'Mofiqul/dracula.nvim'
 
   -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "hrsh7th/nvim-cmp"         -- The completion plugin
+  use "hrsh7th/cmp-buffer"       -- buffer completions
+  use "hrsh7th/cmp-path"         -- path completions
+  use "hrsh7th/cmp-cmdline"      -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
 
@@ -89,13 +89,13 @@ return packer.startup(function(use)
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
   -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
+  use "L3MON4D3/LuaSnip"             --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
+  use "neovim/nvim-lspconfig"           -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+  use "tamago324/nlsp-settings.nvim"    -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- Telescope
@@ -121,29 +121,38 @@ return packer.startup(function(use)
   -- Lua
   use {
     "abecodes/tabout.nvim",
-    wants = {'nvim-treesitter'}, -- or require if not used so far
-    after = {'nvim-cmp'} -- if a completion plugin is using tabs load it before
+    wants = { 'nvim-treesitter' }, -- or require if not used so far
+    after = { 'nvim-cmp' }       -- if a completion plugin is using tabs load it before
     --[[ after = {"completion-nvim"} ]]
   }
 
   -- orgmode
-  
+
   use {
     'nvim-orgmode/orgmode',
-    ft = {'org'},
+    ft = { 'org' },
     config = function()
-      require('orgmode').setup{}
+      require('orgmode').setup {}
     end
   }
-  
+
   -- AI Assistence
   -- Remove the `use` here if you're using folke/lazy.nvim.
   use {
-    'Exafunction/codeium.vim',
-     requires = {
-        "nvim-lua/plenary.nvim",
-        "hrsh7th/nvim-cmp",
+    "Exafunction/codeium.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
     },
+    --[[ config = function() ]]
+    --[[   -- Change '<C-g>' here to any keycode you like. ]]
+    --[[   vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true }) ]]
+    --[[   vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, ]]
+    --[[     { expr = true, silent = true }) ]]
+    --[[   vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, ]]
+    --[[     { expr = true, silent = true }) ]]
+    --[[   vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true }) ]]
+    --[[ end ]]
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
