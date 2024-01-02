@@ -65,8 +65,8 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-    theme = "auto",
-    -- theme = "tokyonight",
+    -- theme = "auto",
+    theme = "tokyonight",
     -- theme = "nightfox",
     -- theme = "duskfox",
 		-- theme = "spaceduck",
