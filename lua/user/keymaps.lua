@@ -59,7 +59,7 @@ keymap("n", "<C-Left>", ":vertical resize -5<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +5<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<F2>", ":bnext<CR>", opts) -- cycles through buffrers
+-- keymap("n", "<F2>", ":bnext<CR>", opts) -- cycles through buffrers
 keymap("n", "<A-l>", ":bnext<CR>", opts)
 keymap("n", "<A-h>", ":bprevious<CR>", opts)
 

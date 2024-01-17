@@ -65,18 +65,7 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-    -- theme = "auto",
-    theme = "tokyonight",
-    -- theme = "nightfox",
-    -- theme = "duskfox",
-		-- theme = "spaceduck",
-		-- theme = "solarized",
-		-- theme = "papercolor_dark",
-		-- theme = "gruvbox",
-		--[[ theme = "dracula-nvim", ]]
-		-- theme = "dracula",
-		-- theme = "horizon",
-		-- theme = "onedark",
+		theme = "onedark", -- "auto", -- You can use tokyonight,  nightfox, duskfox, spaceduck, solarized, papercolor_dark, gruvbox, dracula-nvim, horizon
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },

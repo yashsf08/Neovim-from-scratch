@@ -68,14 +68,14 @@ local config = {
     lualine_c = {},
     lualine_x = {},
   },
-  tabline = {
-    lualine_a = {'buffers'},
-    -- lualine_b = {'branch'},
-    lualine_c = {'filename'},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {'tabs'}
-  },
+  --[[ tabline = { ]]
+  --[[   lualine_a = {'buffers'}, ]]
+  --[[   -- lualine_b = {'branch'}, ]]
+  --[[   lualine_c = {'filename'}, ]]
+  --[[   lualine_x = {}, ]]
+  --[[   lualine_y = {}, ]]
+  --[[   lualine_z = {'tabs'} ]]
+  --[[ }, ]]
 }
 
 -- Inserts a component in lualine_c at left section
