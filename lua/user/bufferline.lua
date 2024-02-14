@@ -1,5 +1,6 @@
 local status_ok, bufferline = pcall(require, "bufferline")
 if not status_ok then
+  print("bufferline not loaded!")
   return
 end
 
@@ -14,8 +15,8 @@ bufferline.setup {
     -- and so changing this is NOT recommended, this is intended
     -- as an escape hatch for people who cannot bear it for whatever reason
     indicator_icon = "▎",
-    buffer_close_icon = "",
-    -- buffer_close_icon = '',
+    --[[ buffer_close_icon = "", ]]
+    buffer_close_icon = '',
     modified_icon = "●",
     close_icon = "",
     -- close_icon = '',
@@ -73,19 +74,18 @@ bufferline.setup {
   },
   highlights = {
     fill = {
-      guifg = { attribute = "fg", highlight = "#ff0000" },
+      guifg = { attribute = "fg", highlight = "ff0000" },
       guibg = { attribute = "bg", highlight = "TabLine" },
     },
     background = {
       guifg = { attribute = "fg", highlight = "TabLine" },
       guibg = { attribute = "bg", highlight = "TabLine" },
     },
-
-    -- buffer_selected = {
-    --   guifg = {attribute='fg',highlight='#ff0000'},
-    --   guibg = {attribute='bg',highlight='#0000ff'},
-    --   gui = 'none'
-    --   },
+    buffer_selected = {
+      guifg = {attribute='fg',highlight='ff0000'},
+      guibg = {attribute='bg',highlight='0000ff'},
+      gui = 'none'
+    },
     buffer_visible = {
       guifg = { attribute = "fg", highlight = "TabLine" },
       guibg = { attribute = "bg", highlight = "TabLine" },
@@ -99,10 +99,10 @@ bufferline.setup {
       guifg = { attribute = "fg", highlight = "TabLine" },
       guibg = { attribute = "bg", highlight = "TabLine" },
     },
-    -- close_button_selected = {
-    --   guifg = {attribute='fg',highlight='TabLineSel'},
-    --   guibg ={attribute='bg',highlight='TabLineSel'}
-    --   },
+    close_button_selected = {
+      guifg = {attribute='fg',highlight='TabLineSel'},
+      guibg ={attribute='bg',highlight='TabLineSel'}
+    },
 
     tab_selected = {
       guifg = { attribute = "fg", highlight = "Normal" },
@@ -133,7 +133,6 @@ bufferline.setup {
       guibg = { attribute = "bg", highlight = "TabLine" },
       gui = "italic",
     },
-
     modified = {
       guifg = { attribute = "fg", highlight = "TabLine" },
       guibg = { attribute = "bg", highlight = "TabLine" },
@@ -155,10 +154,10 @@ bufferline.setup {
       guifg = { attribute = "bg", highlight = "Normal" },
       guibg = { attribute = "bg", highlight = "Normal" },
     },
-    -- separator_visible = {
-    --   guifg = {attribute='bg',highlight='TabLine'},
-    --   guibg = {attribute='bg',highlight='TabLine'}
-    --   },
+    separator_visible = {
+      guifg = {attribute='bg',highlight='TabLine'},
+      guibg = {attribute='bg',highlight='TabLine'}
+    },
     indicator_selected = {
       guifg = { attribute = "fg", highlight = "LspDiagnosticsDefaultHint" },
       guibg = { attribute = "bg", highlight = "Normal" },
