@@ -93,8 +93,20 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
-  use "neovim/nvim-lspconfig"           -- enable LSP
+  --[[ use "neovim/nvim-lspconfig"           -- enable LSP ]]
+  use {
+    "neovim/nvim-lspconfig",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      {
+        "folke/neodev.nvim",
+      },
+    },
+  }
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use {
+    "williamboman/mason.nvim"
+  }
   use "tamago324/nlsp-settings.nvim"    -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
@@ -110,6 +122,8 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
+  use "windwp/nvim-ts-autotag"
+  use "windwp/nvim-autopairs"
 
   -- Git
   use "lewis6991/gitsigns.nvim"
