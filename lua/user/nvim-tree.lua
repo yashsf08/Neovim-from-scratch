@@ -1,148 +1,106 @@
-vim.g.show_icons = {
-  git = 1,
-  folders = 1,
-  files = 1,
-  folder_arrows = 1,
-  tree_width = 30,
-  }
-
-vim.g.git_hl = 1
--- vim.g.root_folder_modifier = ":t"
-vim.g.root_folder_modifier = ":~"
--- vim.g.auto_close = true
-
-
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
+  print("nvim_tree not loaded!!!")
   return
 end
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-  return
+vim.g.nvim_tree_gitignore = 0
+
+local function my_on_attach(bufnr)
+  local api = require "nvim-tree.api"
+
+  local function opts(desc)
+    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  api.config.mappings.default_on_attach(bufnr)
+
+  vim.keymap.set("n", "l", api.node.open.edit, opts "Open")
+  vim.keymap.set("n", "h", api.node.navigate.parent_close, opts "Close Directory")
+  vim.keymap.set("n", "v", api.node.open.vertical, opts "Open: Vertical Split")
+  vim.keymap.del("n", "<C-k>", { buffer = bufnr })
+  vim.keymap.set("n", "<S-k>", api.node.open.preview, opts "Open Preview")
 end
 
-local tree_cb = nvim_tree_config.nvim_tree_callback
+local icons = require "user.icons"
+
+
+local icons = require "user.icons"
 
 nvim_tree.setup {
-  disable_netrw = true,
-  hijack_netrw = true,
-  open_on_setup = false,
-  ignore_ft_on_setup = {
-    "startify",
-    "dashboard",
-    "alpha",
-  },
-  open_on_tab = false,
-  hijack_cursor = false,
-  update_cwd = true,
-  -- update_to_buf_dir = {
-  --   enable = true,
-  --   auto_open = true,
-  -- },
-  diagnostics = {
-    enable = true,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    },
-  },
-  update_focused_file = {
-    enable = true,
-    update_cwd = true,
-    ignore_list = {},
-  },
-  system_open = {
-    cmd = nil,
-    args = {},
-  },
-  filters = {
-    dotfiles = false,
-    custom = {},
-  },
-  git = {
-    enable = true,
-    ignore = false,
-    timeout = 500,
-  },
-  view = {
-    width = 30,
-    hide_root_folder = false,
-    side = "left",
-    -- auto_resize = true,          ; Option Removed
-    mappings = {
-      custom_only = false,
-      list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h", cb = tree_cb "close_node" },
-        { key = "v", cb = tree_cb "vsplit" },
-      },
-    },
-    float = {
+  on_attach = my_on_attach,
+  sync_root_with_cwd = true,
+  renderer = {
+    add_trailing = false,
+    group_empty = false,
+    highlight_git = false,
+    full_name = false,
+    highlight_opened_files = "none",
+    root_folder_label = ":t",
+    indent_width = 2,
+    indent_markers = {
       enable = false,
-      quit_on_focus_loss = true,
-      open_win_config = {
-        relative = "editor",
-        border = "rounded",
-        width = 30,
-        height = 30,
-        row = 1,
-        col = 1,
+      inline_arrows = true,
+      icons = {
+        corner = "└",
+        edge = "│",
+        item = "│",
+        none = " ",
       },
     },
-    number = false,
-    relativenumber = false,
-  },
-  trash = {
-    cmd = "trash",
-    require_confirm = true,
-  },
-  actions = {
-    use_system_clipboard = true,
-    change_dir = {
-      enable = true,
-      global = false,
-      restrict_above_cwd = false,
-    },
-    open_file = {
-      quit_on_open = false,
-      resize_window = false,
-      window_picker = {
-        enable = true,
-        chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
-        exclude = {
-          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
-          buftype = { "nofile", "terminal", "help" },
+    icons = {
+      git_placement = "before",
+      padding = " ",
+      symlink_arrow = " ➛ ",
+      glyphs = {
+        default = icons.ui.Text,
+        symlink = icons.ui.FileSymlink,
+        bookmark = icons.ui.BookMark,
+        folder = {
+          arrow_closed = icons.ui.ChevronRight,
+          arrow_open = icons.ui.ChevronShortDown,
+          default = icons.ui.Folder,
+          open = icons.ui.FolderOpen,
+          empty = icons.ui.EmptyFolder,
+          empty_open = icons.ui.EmptyFolderOpen,
+          symlink = icons.ui.FolderSymlink,
+          symlink_open = icons.ui.FolderOpen,
+        },
+        git = {
+          unstaged = icons.git.FileUnstaged,
+          staged = icons.git.FileStaged,
+          unmerged = icons.git.FileUnmerged,
+          renamed = icons.git.FileRenamed,
+          untracked = icons.git.FileUntracked,
+          deleted = icons.git.FileDeleted,
+          ignored = icons.git.FileIgnored,
         },
       },
     },
+    special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
+    symlink_destination = true,
   },
-  renderer = {
+  update_focused_file = {
+    enable = true,
+    debounce_delay = 15,
+    update_root = true,
+    ignore_list = {},
+  },
+
+  diagnostics = {
+    enable = true,
+    show_on_dirs = false,
+    show_on_open_dirs = true,
+    debounce_delay = 50,
+    severity = {
+      min = vim.diagnostic.severity.HINT,
+      max = vim.diagnostic.severity.ERROR,
+    },
     icons = {
-      glyphs = {
-              default = "",
-              symlink = "",
-              git = {
-                unstaged = "",
-                staged = "S",
-                unmerged = "",
-                renamed = "➜",
-                deleted = "",
-                untracked = "U",
-                ignored = "◌",
-              },
-              folder = {
-                default = "",
-                open = "",
-                empty = "",
-                empty_open = "",
-                symlink = "",
-              },
-          }
-    }
+      hint = icons.diagnostics.BoldHint,
+      info = icons.diagnostics.BoldInformation,
+      warning = icons.diagnostics.BoldWarning,
+      error = icons.diagnostics.BoldError,
+    },
   },
-  -- quit_on_open = false,
-  -- disable_window_picker = 0,
 }
