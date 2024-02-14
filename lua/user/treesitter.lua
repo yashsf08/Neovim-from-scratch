@@ -1,31 +1,105 @@
-local status_ok, configs = pcall(require, "nvim-treesitter.configs")
+local status_ok, ts_configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
+  print("Treesitter not found!")
   return
 end
 
-configs.setup {
-  ensure_installed = {"cpp", "go", "nix", "make", "regex", "rust",  "haskell",  "lua",  "kotlin",  "javascript",  "python",  "bash", "org" }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = { "" }, -- List of parsers to ignore installing
-  autopairs = {
-    enable = true,
-  },
+local status_ok, ts_context = pcall(require, "ts_context_commentstring")
+if not status_ok then
+  print("ts_context_commentstring not found!")
+  return
+end
+
+vim.g.skip_ts_context_commentstring_module = true
+
+-- TODO:
+--[[ ts_context_commentstring.setup { ]]
+--[[   enable_autocmd = false,  ]]
+--[[ } ]]
+
+ts_configs.setup {
+  ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python" }, -- put the language you want in this array
+  ignore_install = { "" },
+  sync_install = false,
   highlight = {
-    enable = true, -- false will disable the whole extension
-    disable = { "" }, -- list of language that will be disabled
-    additional_vim_regex_highlighting = true,
+    enable = true,
+    disable = { "markdown" },
+    additional_vim_regex_highlighting = false,
   },
-  indent = { enable = true, disable = { "yaml" } },
+
+  indent = { enable = true },
+
+  matchup = {
+    enable = { "astro" },
+    disable = { "lua" },
+  },
+
+  autotag = { enable = true },
+
   context_commentstring = {
     enable = true,
     enable_autocmd = false,
   },
-  rainbow = {
-    enable = true,
-    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-    max_file_lines = nil, -- Do not enable for files with more than n lines, int
-    -- colors = {}, -- table of hex strings
-    -- termcolors = {} -- table of colour name strings
+
+  autopairs = { enable = true },
+
+  textobjects = {
+    select = {
+      enable = true,
+      -- Automatically jump forward to textobj, similar to targets.vim
+      lookahead = true,
+      keymaps = {
+        -- You can use the capture groups defined in textobjects.scm
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["at"] = "@class.outer",
+        ["it"] = "@class.inner",
+        ["ac"] = "@call.outer",
+        ["ic"] = "@call.inner",
+        ["aa"] = "@parameter.outer",
+        ["ia"] = "@parameter.inner",
+        ["al"] = "@loop.outer",
+        ["il"] = "@loop.inner",
+        ["ai"] = "@conditional.outer",
+        ["ii"] = "@conditional.inner",
+        ["a/"] = "@comment.outer",
+        ["i/"] = "@comment.inner",
+        ["ab"] = "@block.outer",
+        ["ib"] = "@block.inner",
+        ["as"] = "@statement.outer",
+        ["is"] = "@scopename.inner",
+        ["aA"] = "@attribute.outer",
+        ["iA"] = "@attribute.inner",
+        ["aF"] = "@frame.outer",
+        ["iF"] = "@frame.inner",
+      },
+    },
   },
 }
+
+
+-- local configs = require "nvim-treesitter.configs"
+--
+-- configs.setup {
+--   -- modules = {
+--   --
+--   --
+--   --   rainbow = {
+--   --     enable = false,
+--   --     query = {
+--   --       "rainbow-parens",
+--   --     },
+--   --     strategy = require("ts-rainbow").strategy.global,
+--   --     hlgroups = {
+--   --       -- "TSRainbowRed",
+--   --       "TSRainbowBlue",
+--   --       -- "TSRainbowOrange",
+--   --       -- "TSRainbowCoral",
+--   --       "TSRainbowPink",
+--   --       "TSRainbowYellow",
+--   --       -- "TSRainbowViolet",
+--   --       -- "TSRainbowGreen",
+--   --     },
+--   --   },
+--   -- },
+-- }
