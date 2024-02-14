@@ -162,8 +162,8 @@ keymap("i", "<C-d>", "<Del>", opts)
 
 
 -- settings for c++ build
-keymap("n", "<F8>", ":!gcc -lstdc++ -std=c++14 % && ./a.out", opts)
-keymap("n", "<F3>", ":!gcc -lstdc++ -std=c++14 -lm -ldl % -o %:r && %:r < %:p:h/input.txt > %:p:h/output.txt<CR>", opts)
+keymap("n", "<F8>", ":!g++ -lstdc++ -std=c++14 % && ./a.out", opts)
+keymap("n", "<F3>", ":!g++ -lstdc++ -std=c++14 -lm -ldl % -o %:r && %:r < %:p:h/input.txt > %:p:h/output.txt<CR>", opts)
 -- keymap("n", "<F8>", "<ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -DONPC -O2 -o %< % && ./%< < input.txt<CR>", opts)
 keymap("i", "<F8>", "<ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -DONPC -O2 -o %< % && ./%< < input.txt<CR>", opts)
 keymap("n", "<F9>", "<ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>", opts)
