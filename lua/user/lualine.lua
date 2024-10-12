@@ -78,7 +78,7 @@ lualine.setup({
 		lualine_c = { diff },
 		-- lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_x = { spaces, "encoding" },
-		lualine_y = { filetype, "fileformat" },
+		lualine_y = { filetype, "fileformat", progress },
     lualine_z = { '%l:%c', '%p%%/%L' },
 	},
 	inactive_sections = {
