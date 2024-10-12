@@ -1,24 +1,18 @@
-require "user.options"
-require "user.keymaps"
-require "user.plugins"
-require "user.colorscheme"
-require "user.cmp"
-require "user.lsp"
-require "user.telescope"
-require "user.treesitter"
-require "user.autopairs"
-require "user.comment"
-require "user.gitsigns"
+require "user.options"                    -- done
+require "user.keymaps"                    -- Perfect
+require "user.plugins"                    -- Perfect
+require "user.ui.neogotham"                 -- Perfect
+--[[ require "user.mason-lsp" ]]
+require "user.mason-lsp.temp"
+require "user.cmp"                        -- Perfect
+require "user.telescope"                    -- Perfect
+require "user.treesitter"                   -- Perfect
+require "user.autopairs"                    -- Perfect
+require "user.comment"                    -- Perfect
+require "user.gitsigns2"                    -- Perfect
 require "user.nvim-tree"
 require "user.bufferline"
---[[ require "user.lualine" ]]
---[[ require "user.bubbles" ]]
--- require "user.ui.tabby"
--- require "user.ui.colors"
---[[ require "user.ui.feline" ]]
---[[ require "user.feline" ]]
---[[ require "user.slanted_gaps" ]]
-require "user.evil_lualine"
+require "user.lualine"
 -- require "user.diffview"
 require "user.toggleterm"
 require "user.project"
@@ -27,6 +21,6 @@ require "user.indentline"
 require "user.alpha"
 require "user.whichkey"
 require "user.autocommands"
-require "user.tabout"
-require "user.codeium"
-require "user.orgmode"
+--[[ require "user.codeium" ]]
+--[[ require "user.tabout" ]]
+--[[ require "user.orgmode" ]]
