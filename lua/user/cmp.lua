@@ -65,6 +65,7 @@ cmp.setup {
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     --[[ ["<C-e>"] = cmp.mapping { ]]
+    ["<C-e>"] = cmp.mapping.abort(),                    -- @Yash - adding extra key apart from ~
     ["`"] = cmp.mapping {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
@@ -140,6 +141,7 @@ cmp.setup {
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
+        codeium = "[Codeium]"
       })[entry.source.name]
       return vim_item
     end,
@@ -149,17 +151,12 @@ cmp.setup {
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
-    { name = "orgmode" },
     { name = "codeium" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
-  -- Not using because it is deprecated
-  -- documentation = {
-  --   border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  -- },
   experimental = {
     ghost_text = false,
     native_menu = false,
