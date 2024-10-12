@@ -43,14 +43,17 @@ keymap("i", "<F6>", "<Esc>:tabclose<CR>", opts)
 -- Normal --
 
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "sh", "<C-w>h", opts)
+keymap("n", "sj", "<C-w>j", opts)
+keymap("n", "sk", "<C-w>k", opts)
+keymap("n", "sl", "<C-w>l", opts)
 
--- Split Windows 
-keymap("n", "ss", ":split<CR>", opts)
+-- Split Window
+keymap("n", "ss", "<C-w>s", opts)
 keymap("n", "sv", ":vsplit<CR>", opts)
+
+-- Keep Main window
+keymap("n", "so", "<C-w>o", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -4<CR>", opts)
@@ -99,12 +102,6 @@ keymap("n", "<C-s>", ":w<CR>", opts)
 -- Change Caps
 -- keymap("n", "<C-u>", "gUiww", opts)
 -- keymap("n", "<C-d>", "guiww", opts)
-
-
--- fast traverse
---[[ keymap("n", "<C-u>", "16k", opts) ]]
---[[ keymap("n", "<C-d>", "16j", opts) ]]
-
 
 -- Buffers 
 keymap("n", "<C-q>", ":q<CR>", opts) -- Close Windows

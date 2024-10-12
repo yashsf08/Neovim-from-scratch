@@ -18,7 +18,7 @@ local options = {
   splitright = true,                       -- force all vertical splits to go to the right of current window
   swapfile = false,                        -- creates a swapfile
   termguicolors = true,                    -- set term gui colors (most terminals support this)
-  timeoutlen = 100,                        -- time to wait for a mapped sequence to complete (in milliseconds)
+  timeoutlen = 500,                        -- time to wait for a mapped sequence to complete (in milliseconds)
   undofile = false,                        -- enable persistent undo | Remember undo from previous sessions
   updatetime = 300,                        -- faster completion (4000ms default)
   writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
@@ -35,20 +35,17 @@ local options = {
   wrapscan = true,                         --[[ Searches wrap around the end of the file ]]
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
-  --[[ guifont = "JuliaMono:h12",               -- the font used in graphical neovim applications ]]
-  --[[ guifont = "Fira Code:h11",               -- the font used in graphical neovim applications ]]
   guifont = "Monego:h12",               -- the font used in graphical neovim applications
-  --[[ guifont = "Monaco for Powerline:h12",               -- the font used in graphical neovim applications ]]
   autoread = true,                         -- autoreload file when something change
   foldmethod = "expr",                     -- Enable code folding with rule as "expression" ("manual" is default value)
   foldexpr = "nvim_treesitter#foldexpr()", -- Using code folding with treesitter
-  -- foldopen = "all"                      -- automatic unfold as you jump to the position ( all | block | hor | insert | jump | mark | percent | quickfix | search | tab | undo )
-  -- foldclose = "all"                        
-  -- nofoldenable = "no",                     -- disable auto code folding on files
+  -- foldopen = "all",                     -- automatic unfold as you jump to the position ( all | block | hor | insert | jump | mark | percent | quickfix | search | tab | undo )
+  -- foldclose = "all",                         
+  -- nofoldenable = "no",                  -- disable auto code folding on files
   hidden = false,
-  ruler = true,                            --[[ Show the line and column number of the cursor position, separated by a comma.]]
-  linespace = 0,                           --[[ Number of pixel lines inserted between characters. ]]
-  showcmd = true,                          --[[ Show each command executed in the last line of the screen. ]]
+  ruler = true,                            -- Show the line and column number of the cursor position, separated by a comma.
+  linespace = 0,                           -- Number of pixel lines inserted between characters.
+  showcmd = true,                          -- Show each command executed in the last line of the screen.
 }
 
 vim.opt.shortmess:append "c"
