@@ -47,6 +47,7 @@ keymap("n", "sh", "<C-w>h", opts)
 keymap("n", "sj", "<C-w>j", opts)
 keymap("n", "sk", "<C-w>k", opts)
 keymap("n", "sl", "<C-w>l", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Split Window
 keymap("n", "ss", "<C-w>s", opts)
@@ -62,7 +63,6 @@ keymap("n", "<C-Left>", ":vertical resize -5<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +5<CR>", opts)
 
 -- Navigate buffers
--- keymap("n", "<F2>", ":bnext<CR>", opts) -- cycles through buffrers
 keymap("n", "<A-l>", ":bnext<CR>", opts)
 keymap("n", "<A-h>", ":bprevious<CR>", opts)
 
@@ -90,9 +90,8 @@ keymap("n", "<CR>", "o<Esc>", opts)
 
 -- Insert --
 -- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
-keymap("i", "<C-c>", "<Esc>", opts)
+-- keymap("i", "<C-c>", "<Esc>", opts)
 
 
 -- Saving files
@@ -108,8 +107,7 @@ keymap("n", "<C-q>", ":q<CR>", opts) -- Close Windows
 -- keymap("n", "<leader>d", ":bd<CR>", opts) -- Delete Buffer - Already mapped to <leader>c
 
 -- Tab Normal
--- keymap("n", "<Tab>", ">>", opts)
--- keymap("n", "<S-Tab>", "<<", opts)
+keymap("n", "<S-Tab>", ">>", opts)
 keymap("n", ">", ">>", opts)
 keymap("n", "<", "<<", opts)
 
@@ -143,24 +141,21 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
 -- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
+keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
+keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
+keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 
 -- Editor & Personal Settings
-
-  -- Adding space after every comma
--- keymap("i", ",", ",<Space>", opts)
 keymap("i", ",", ", ", opts)
-  -- Delete Character in insert mode
 keymap("i", "<C-d>", "<Del>", opts)
 
 
 -- settings for c++ build
 keymap("n", "<F8>", ":!g++ -lstdc++ -std=c++14 % && ./a.out", opts)
 keymap("n", "<F3>", ":!g++ -lstdc++ -std=c++14 -lm -ldl % -o %:r && %:r < %:p:h/input.txt > %:p:h/output.txt<CR>", opts)
+keymap("n", "<F4>", ":!python % < %:p:h/input.txt > %:p:h/output.txt<CR>", opts)
 -- keymap("n", "<F8>", "<ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -DONPC -O2 -o %< % && ./%< < input.txt<CR>", opts)
 keymap("i", "<F8>", "<ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -DONPC -O2 -o %< % && ./%< < input.txt<CR>", opts)
 keymap("n", "<F9>", "<ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>", opts)
@@ -168,7 +163,3 @@ keymap("i", "<F9>", "<ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -We
 keymap("n", "<F10>", "<ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< < inp<CR>", opts)
 keymap("i", "<F10>", '<ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o "%<" "%" && "./%<" < inp<CR>', opts)
 
-
--- Personal Tweaks
--- keymap("n", "<C-d>", "<C-e>", opts)
--- keymap("n", "<C-u>", "<C-y>", opts)
