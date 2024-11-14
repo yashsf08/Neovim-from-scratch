@@ -1,7 +1,7 @@
 -- customize dracula color palette
 
 vim.g.dracula_colors = {
-  bg = "#161925", 
+  bg = "#161925",
   --[[ bg = "#282A36", ]]
   --[[ bg = "#0E1419", ]]
   fg = "#F8F8F2",
@@ -36,6 +36,5 @@ vim.g.dracula_lualine_bg_color = "#161925"
 -- jet italic comment
 vim.g.dracula_italic_comment = true
 
-
 -- Lua:
-vim.cmd[[colorscheme dracula]]
+vim.cmd([[colorscheme dracula-soft]])

@@ -1,3 +1,3 @@
-require("neogotham"):setup({ oldgotham = true })
+require("neogotham"):setup({ oldgotham = false })
 vim.cmd("colorscheme neogotham")
 

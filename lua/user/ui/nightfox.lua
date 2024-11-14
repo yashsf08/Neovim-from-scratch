@@ -1,4 +1,4 @@
-local status_ok, nightfox = pcall(require("nightfox"))
+local status_ok, nightfox = pcall(require, "nightfox")
 if not status_ok then
   print("Night fox is not working")
   return
