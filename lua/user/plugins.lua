@@ -79,6 +79,7 @@ return packer.startup(function(use)
   use 'navarasu/onedark.nvim'
   use 'ishan9299/nvim-solarized-lua'
   use 'Mofiqul/dracula.nvim'
+  use { "briones-gabriel/darcula-solid.nvim", requires = "rktjmp/lush.nvim" }
   use "rebelot/kanagawa.nvim"
   use 'shmerl/neogotham'
 
@@ -98,18 +99,16 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
-  use {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-  }
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
+  use "neovim/nvim-lspconfig"
 
 
 
   -- [[ ------------------>  @Yash - For Old LSP <-----------------------]]
   --[[ use "williamboman/nvim-lsp-installer" -- simple to use language server installer ]]
   --[[ use "tamago324/nlsp-settings.nvim"    -- language server settings defined in json for ]]
-  --[[ use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters ]]
+  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"

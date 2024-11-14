@@ -18,7 +18,7 @@ vim.g.skip_ts_context_commentstring_module = true
 --[[ } ]]
 
 ts_configs.setup {
-  ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python" }, -- put the language you want in this array
+  ensure_installed = { "lua", "bash", "python" }, -- put the language you want in this array
   ignore_install = { "" },
   sync_install = false,
   highlight = {
